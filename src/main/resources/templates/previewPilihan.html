@@ -1,0 +1,56 @@
+// newPage.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ganti Pilihan Jadwal</title>
+    <link rel="stylesheet" href="../css/pasienDash.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/pasienDash.js"></script>
+</head>
+<body>
+    <h1>Ganti Pilihan Jadwal</h1>
+    
+    <div>
+        <label for="emailInput">Email:</label>
+        <input type="text" id="emailInput">
+    </div>
+
+    <div>
+        <label for="departmentSelect">Pilih Departemen:</label>
+        <select id="departmentSelect">
+            <option value="all">Semua Departemen</option>
+            <option value="tht">tht</option>
+            <option value="Departemen B">Departemen B</option>
+            <option value="Departemen C">Departemen C</option>
+        </select>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Pilihan</th>
+                <th>Tanggal Kerja</th>
+                <th>Nama Dokter</th>
+                <th>Jam Kerja</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="radio" name="pilihanPasien" value="" />
+                </td>
+                <td>10 June 2023</td>
+                <td>Dokter X</td>
+                <td>
+                    <span>09:00 - 12:00</span>
+                </td>
+            </tr>
+            <!-- Add more rows for other schedule options -->
+        </tbody>
+    </table>
+
+    <button id="submitButton">OK</button>
+
+    <script src="../js/gantiJadwalPilihan.js"></script>
+</body>
+</html>

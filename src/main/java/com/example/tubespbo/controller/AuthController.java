@@ -32,9 +32,9 @@ public class AuthController {
     public String login(@ModelAttribute LoginRequest loginRequest, Model model) {
         BaseResponse<String> baseResponse = new BaseResponse<>();
         if (pasienService.login(loginRequest, baseResponse)){
-            return "redirect:/template/pasien";
+            return "redirect:/pasienDash";
         }else if(adminService.login(loginRequest, baseResponse)){
-            return "redirect:/template/admin";
+            return "redirect:/adminDash";
         }
         model.addAttribute("success", false);
         return "login";
@@ -50,11 +50,10 @@ public class AuthController {
     public String signup(@ModelAttribute SignupRequest signupRequest, Model model) {
         BaseResponse<String> baseResponse = new BaseResponse<>();
         if (pasienService.signup(signupRequest, baseResponse)){
-            return "redirect:/template/pasien";
-        }else if (adminService.signup(signupRequest, baseResponse)){
-            return "redirect:/template/admin";
+            return "redirect:/auth/login";
         }
         model.addAttribute("success", false);
         return "signup";
     }
+
 }

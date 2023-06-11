@@ -22,9 +22,10 @@ public class PasienServiceImpl implements PasienService {
         System.out.println(usersOptional.isPresent());
         return usersOptional.isPresent();
     }
+
     @Override
     public boolean signup(SignupRequest request, BaseResponse<String> baseResponse) {
-            // Cek apakah email sudah digunakan
+        // Cek apakah email sudah digunakan
         Optional<Pasien> existingUser = repository.findByEmail(request.getEmail());
         if (existingUser.isPresent()) {
             baseResponse.setSuccess(false);
